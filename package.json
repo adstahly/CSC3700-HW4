@@ -1,0 +1,19 @@
+{
+  "name": "csc3700-hw4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node appWController.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adstahly/CSC3700-HW4.git"
+  },
+  "private": true,
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.2"
+  }
+}

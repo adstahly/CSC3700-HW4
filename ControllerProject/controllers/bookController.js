@@ -23,3 +23,5 @@ exports.showSummary = (_req, res) => {
         available
     });
 };
+
+module.exports.books = books;

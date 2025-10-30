@@ -1,0 +1,11 @@
+<h2 class="mb-3">{{patron.name}}'s Checked Out Books</h2>
+{{#each book}}
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <p>{{title}} by {{author}}</p>
+        </div>
+    </div>
+{{/each}}
+<div class="row">
+    <a class="btn btn-primary mt-3" href="/patrons"> Back to Patrons</a>
+</div>

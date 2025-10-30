@@ -4,6 +4,6 @@ const patronsController = require('../controllers/patronController');
 
 router.get('/', patronsController.listPatrons);
 router.get('/:id', patronsController.showPatron);
-//router.get('/summary', patronsController.showSummary);
+router.get('/summary', patronsController.showSummary);
 
 module.exports = router;

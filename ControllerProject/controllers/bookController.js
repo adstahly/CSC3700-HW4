@@ -1,7 +1,7 @@
 const books = [
-    { title: 'The Hobbit', author: 'J.R.R. Tolkien', checkedOut: true },
-    { title: '1984', author: 'George Orwell', checkedOut: false },
-    { title: 'Dune', author: 'Frank Herbert', checkedOut: true }
+    { id: 1, title: 'The Hobbit', author: 'J.R.R. Tolkien', checkedOut: true },
+    { id: 2, title: '1984', author: 'George Orwell', checkedOut: false },
+    { id: 3, title: 'Dune', author: 'Frank Herbert', checkedOut: true }
 ];
 
 exports.showBooks = (_req, res) => {

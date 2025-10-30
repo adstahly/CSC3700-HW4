@@ -6,5 +6,4 @@ router.get('/', patronsController.listPatrons);
 router.get('/summary', patronsController.showSummary);
 router.get('/:id', patronsController.showPatron);
 
-
 module.exports = router;

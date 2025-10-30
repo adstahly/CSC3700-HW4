@@ -16,7 +16,13 @@ exports.listPatrons = (_req, res) => {
 
 exports.showPatron = (req, res) => {
     const patron = patrons.find(p => p.id === parseInt(req.params.id));
+
+    if (!patron) {
+        return res.status(404).send('No patrons found');
+    }
+
     const checkedOutBooks = books.filter(book => patron.checkedOutBooks.includes(book.id))
+
     res.render(`patronDetails`, {
         title: 'Patron Details',
         book: checkedOutBooks,
@@ -24,18 +30,15 @@ exports.showPatron = (req, res) => {
     });
 }
 
-exports.showSummary = (req, res) => {
+exports.showSummary = (_req, res) => {
     const totalPatrons = patrons.length;
     const booksCheckedOut = patrons.map(patron => patron.checkedOutBooks).flat();
     const totalBooksCheckedOut = booksCheckedOut.length;
-    const averageBooks = totalBooksCheckedOut/totalPatrons;
-    console.log(totalPatrons);
-    console.log(totalBooksCheckedOut);
-    console.log(averageBooks);
+    const averageBooks = (totalBooksCheckedOut/totalPatrons).toFixed(1);
     res.render(`patronSummary`, {
         title: 'Patron Summary',
         totalPatrons,
         totalBooksCheckedOut,
         averageBooks
-    })
+    });
 }

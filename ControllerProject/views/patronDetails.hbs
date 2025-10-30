@@ -1,11 +1,10 @@
 <h2 class="mb-3">{{patron.name}}'s Checked Out Books</h2>
+<ul class="list-group">
 {{#each book}}
-    <div class="row">
-        <div class="col-md-4 mb-3">
-            <p>{{title}} by {{author}}</p>
-        </div>
-    </div>
+    <li class="list-group-item d-flex justify-content-between">
+        <span>{{title}} by {{author}}</span>
+    </li>
 {{/each}}
-<div class="row">
-    <a class="btn btn-primary mt-3" href="/patrons"> Back to Patrons</a>
-</div>
+</ul>
+<a class="btn btn-primary mt-3" href="/patrons"> Back to Patrons</a>
+

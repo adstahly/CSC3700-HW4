@@ -3,9 +3,7 @@ const books = bookController.books
 const patrons = [
     {id: 1, name: 'Alice', checkedOutBooks: [1, 3]},
     {id: 2, name: 'Bob', checkedOutBooks: []},
-    {id: 3, name: 'Charlie', checkedOutBooks: [2]},
-    {id: 4, checkedOutBooks: []},
-    {id: 5, name: 'James'}
+    {id: 3, name: 'Charlie', checkedOutBooks: [2]}
 ];
 
 exports.listPatrons = (_req, res) => {
@@ -31,7 +29,6 @@ exports.showPatron = (req, res) => {
 exports.showSummary = (_req, res) => {
     const totalPatrons = patrons.length;
     const booksCheckedOut = patrons.map(patron => patron.checkedOutBooks).flat();
-    console.log(booksCheckedOut);
     const totalBooksCheckedOut = booksCheckedOut.filter(book => book !== undefined).length;
     const averageBooks = (totalBooksCheckedOut / totalPatrons).toFixed(1);
     res.render(`patronSummary`, {

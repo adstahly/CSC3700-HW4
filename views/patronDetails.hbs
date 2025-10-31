@@ -1,0 +1,15 @@
+<h2 class="mb-3">
+    {{#if patron.name}}
+        {{patron.name}}'s Checked Out Books
+    {{else}}
+        Null's Checked Out Books
+    {{/if}}
+</h2>
+<ul class="list-group">
+    {{#each book}}
+        <li class="list-group-item d-flex justify-content-between">
+            <span>{{title}} by {{author}}</span>
+        </li>
+    {{/each}}
+</ul>
+<a class="btn btn-primary mt-3" href="/patrons"> Back to Patrons</a>
